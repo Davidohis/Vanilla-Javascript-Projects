@@ -1,0 +1,88 @@
+
+    *, *:before, *:after {
+        box-sizing: inherit;
+      }
+
+    html {
+      box-sizing: border-box;
+      background: #ffc600;
+      font-family: 'helvetica neue';
+      font-size: 20px;
+      font-weight: 200;
+      cursor: pointer;
+    }
+    
+    body {
+      margin: 0;
+    }
+    
+
+    .panels-flex {
+      min-height: 100vh;
+      overflow: hidden;
+      display: flex;
+      transition: all .2s ease-in-out;
+      -webkit-transition: all .2s ease-in-out;
+      -moz-transition: all .2s ease-in-out;
+      -ms-transition: all .2s ease-in-out;
+      -o-transition: all .2s ease-in-out;
+}
+
+    .panel {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      flex-direction: column;
+      background: #6B0F9C;
+      box-shadow: inset 0 0 0 5px rgba(126, 122, 122, 0.452);
+      color: white;
+      text-align: center;
+      align-items: center;
+      /*Safaritransitionendevent.propertyName===flex*//*Chrome+FFtransitionendevent.propertyName===flex-grow*/transition: font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11), flex 0.7s  cubic-bezier(0.61,-0.19, 0.7,-0.11), background 0.2s;
+      -webkit-transition:       font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),                                flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),                               background 0.2s;
+      -moz-transition:       font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),                                flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),                               background 0.2s;
+      -ms-transition:       font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),                                flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),                               background 0.2s;
+      -o-transition:       font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),                                flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),                               background 0.2s;
+      font-size: 20px;
+      background-size: cover;
+      background-position: center;
+}
+
+    .panel1 { background-image: linear-gradient(rgba(17, 17, 17, 0.281), rgba(15, 15, 15, 0.37)), url(./image_1.jpg); }
+    .panel2 { background-image: linear-gradient(rgba(17, 17, 17, 0.281), rgba(15, 15, 15, 0.37)), url(./image_2.jpg); }
+    .panel3 { background-image: linear-gradient(rgba(17, 17, 17, 0.37), rgba(15, 15, 15, 0.37)), url(./image_3.jpg); }
+    .panel4 { background-image: linear-gradient(rgba(17, 17, 17, 0.37), rgba(15, 15, 15, 0.37)), url(./image_4.jpg); }
+    .panel5 { background-image: linear-gradient(rgba(17, 17, 17, 0.281), rgba(15, 15, 15, 0.37)), url(./image_5.jpg); }
+
+    /* Flex Children */
+    .panel > * {
+      margin: 0;
+      width: 100%;
+      transition: transform 0.5s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1 0 auto;
+    }
+
+    .panel > *:first-child{ transform: translateY(-100%); -webkit-transform: translateY(-100%); -moz-transform: translateY(-100%); -ms-transform: translateY(-100%); -o-transform: translateY(-100%); }
+    .panel.open-active > *:first-child{ transform: translateY(0); -webkit-transform: translateY(0); -moz-transform: translateY(0); -ms-transform: translateY(0); -o-transform: translateY(0); }
+    .panel > *:last-child{ transform: translateY(100%); -webkit-transform: translateY(100%); -moz-transform: translateY(100%); -ms-transform: translateY(100%); -o-transform: translateY(100%); }
+    .panel.open-active > *:last-child{ transform: translateY(0); -webkit-transform: translateY(0); -moz-transform: translateY(0); -ms-transform: translateY(0); -o-transform: translateY(0); }
+
+    .panel p {
+      text-transform: uppercase;
+      font-family: 'Amatic SC', cursive;
+      text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+      font-size: 1.5em;
+    }
+    
+    .panel p:nth-child(2) {
+      font-size: 3.5em;
+    }
+
+    .panel.open {
+      flex: 5;
+      font-size: 40px;
+    }
