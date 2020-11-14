@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.2s linear;
+}
+
+body.dark {
+    background-color: #292c35;
+}
+
+label {
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 50px;
+    height: 30px;
+    width: 60px;
+    padding: 7px;
+    position: relative;
+    transform: scale(1.5);
+}
+
+img .moon {
+    color: #f1c40f;
+}
+
+img .sun {
+    color: #f39c12;
+}
+
+.ball {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    height: 25px;
+    width: 25px;
+    transition: transform .2s linear;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+input:checked + .label .ball {
+    transform: translateX(28px);
+}
